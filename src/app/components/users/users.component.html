@@ -1,0 +1,47 @@
+<app-list-users (sendPosition)="getPositions($event)"></app-list-users>
+
+
+<div class="modal fade mt-5 pt-5" id="editModal" tabindex="-1" role="dialog" 
+    aria-label="editModalLabel" aria-hidden="true" >
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="editModalLabel"> Modal Editar</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="modal-body">
+                <form *ngIf="userFound">
+                    <div class="form-group">
+                        <label for="">Nombre</label>
+                        <input type="text" name="nombre" class="form-control" [(ngModel)]="userFound.nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Direccion</label>
+                        <input type="text" name="direccion" class="form-control" [(ngModel)]="userFound.direccion">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Teléfono</label>
+                        <input type="text" name="telefono" class="form-control" [(ngModel)]="userFound.telefono">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Email</label>
+                        <input type="text" name="email" class="form-control" [(ngModel)]="userFound.email">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" (click)="editUser()">Guardar Cambios</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+
+

@@ -1,0 +1,33 @@
+<div class="container">
+    <h3 class="ml-3">Usuarios</h3>
+
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-4 mt-4" *ngFor="let user of myUsers; let i = index">
+                 <div class="card">
+                     <div class="card-body">
+                         <h5>{{ user.nombre }}</h5>
+                         <p class="card-text">
+                            {{ user.direccion }} <br>
+                            {{ user.telefono }}<br>
+                            {{ user.email }}
+                         </p>
+
+                         <hr>
+
+                         <div class="row justify-content-between container">
+                            <div class="col-md-6">
+                                <button  (click)="getPositions(user.id)" type="button" class="btn btn-warning" data-toggle="modal" data-target="#editModal">Editar</button>
+                            </div>
+                            <div class="col-md-6">
+                                <button  (click)="deleteUser(i)" type="button" class="btn btn-danger ml-2">Eliminar</button>                                
+                            </div>
+                         </div>
+                     </div>
+                 </div>
+            </div>
+
+            
+        </div>
+    </div>
+</div>
